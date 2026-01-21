@@ -1,19 +1,27 @@
+import { motion } from 'framer-motion';
 import { skillsData } from '../data/skills';
 
 const Skills = () => {
     return (
         <section id="skills" className="py-24 px-4 relative">
             <div className="max-w-7xl mx-auto mb-16 text-center">
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    className="text-4xl md:text-5xl font-bold text-white mb-6"
+                >
                     Mes <span className="text-orange-400">Compétences</span>
-                </h2>
+                </motion.h2>
                 <div className="h-1.5 w-24 bg-orange-500 rounded-full shadow-[0_0_15px_rgba(249,115,22,0.5)] mx-auto"></div>
             </div>
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                {skillsData.map((category) => (
-                    <div
+                {skillsData.map((category, catIndex) => (
+                    <motion.div
                         key={category.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: catIndex * 0.1 }}
                         className="bg-slate-900/40 border border-white/5 p-6 rounded-2xl hover:border-orange-500/30 transition-colors duration-300"
                     >
                         <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/5">
@@ -41,7 +49,7 @@ const Skills = () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>
