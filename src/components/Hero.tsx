@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 
 const Hero = () => {
     return (
@@ -22,6 +22,9 @@ const Hero = () => {
                 <div className="flex justify-center gap-4">
                     <a href="#projects" className="px-8 py-4 bg-white text-black font-bold rounded-full flex items-center gap-2 hover:bg-slate-200 transition-colors">
                         Mes Projets <ArrowRight size={20} />
+                    </a>
+                    <a href="/CV Moussaoui Wassime.pdf" className="px-8 py-4 bg-orange-600 text-white font-bold rounded-full flex items-center gap-2 hover:bg-orange-700 transition-colors">
+                        Mon CV <Download size={20} />
                     </a>
                 </div>
             </div>
