@@ -1,21 +1,29 @@
+import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { projectsData } from '../data/projects';
 
 const Projects = () => {
     return (
         <section id="projects" className="py-24 px-4 max-w-7xl mx-auto">
-            <div className="mb-16 text-center">
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className="mb-16 text-center"
+            >
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                     Mes <span className="text-orange-400">Projets</span>
                 </h2>
 
                 <div className="h-1.5 w-24 bg-orange-500 rounded-full shadow-[0_0_15px_rgba(249,115,22,0.5)] mx-auto"></div>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {projectsData.map((project, index) => (
-                    <div
+                    <motion.div
                         key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
                         className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/50 shadow-2xl hover:shadow-orange-500/10 transition-shadow duration-300"
                     >
                         <div className="relative h-48 w-full overflow-hidden">
@@ -68,7 +76,7 @@ const Projects = () => {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>
