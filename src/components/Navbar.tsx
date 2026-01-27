@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Home, User, Code } from 'lucide-react';
+import { Home, User, Code, Mail } from 'lucide-react';
 
 const Navbar = () => {
     return (
@@ -49,6 +49,19 @@ const Navbar = () => {
                             <span className="relative z-10 flex items-center gap-2">
                                 <User size={18} />
                                 <span className="hidden md:inline">Projets</span>
+                            </span>
+                            <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#contact"
+                            className="relative px-4 py-2 text-sm font-medium text-slate-400 hover:text-white transition-colors group flex items-center gap-2 rounded-full overflow-hidden"
+                        >
+                            <span className="relative z-10 flex items-center gap-2">
+                                <Mail size={18} />
+                                <span className="hidden md:inline">Contact</span>
                             </span>
                             <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                         </a>
