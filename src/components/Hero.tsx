@@ -1,34 +1,61 @@
-import { ArrowRight, Download } from 'lucide-react';
+import { motion } from 'framer-motion';
+import {Github, ArrowRight, Download} from 'lucide-react';
+import { fadeInUp, staggerContainer } from '../utils/animations';
 
 const Hero = () => {
     return (
-        <section id="home" className="min-h-[80vh] flex items-center justify-center pt-20">
-            <div className="text-center space-y-8 max-w-4xl">
-                <div className="inline-block px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm">
+        <section id="home" className="relative min-h-[80vh] flex items-center justify-center pt-20 px-4">
+            <motion.div
+                className="max-w-4xl mx-auto text-center space-y-8"
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+            >
+                <motion.div variants={fadeInUp}>
+                  <span className="px-4 py-2 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-sm font-medium backdrop-blur-sm">
                     Disponible pour un stage — Avril 2025
-                </div>
+                  </span>
+                </motion.div>
 
-                <h1 className="text-5xl md:text-7xl font-bold text-white">
-                    Concevoir des solutions <br />
-                    <span className="bg-clip-text text-transparent bg-linear-to-r from-orange-400 to-orange-600">
-                        Performantes & Intuitives
-                    </span>
-                </h1>
+                <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-bold tracking-tight text-white">
+                    Bonjour je suis <br />
+                    <span className="text-gradient">Moussaoui Wassime</span>
+                </motion.h1>
 
-                <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+                <motion.p variants={fadeInUp} className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
                     Étudiant en informatique spécialisé en <strong className="text-white">C++</strong> et <strong className="text-white">Web</strong>.
-                </p>
+                </motion.p>
 
-                <div className="flex justify-center gap-4">
-                    <a href="#projects" className="px-8 py-4 bg-white text-black font-bold rounded-full flex items-center gap-2 hover:bg-slate-200 transition-colors">
-                        Mes Projets <ArrowRight size={20} />
+                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                    <a
+                        href="#projects"
+                        className="px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                    >
+                        Explorer mes travaux
+                        <ArrowRight size={20} />
                     </a>
-                    <a href="/CV Moussaoui Wassime.pdf" className="px-8 py-4 bg-orange-600 text-white font-bold rounded-full flex items-center gap-2 hover:bg-orange-700 transition-colors">
-                        Mon CV <Download size={20} />
+                    <a
+                        href="/cv_wassime_moussaoui.pdf"
+                        target="_blank"
+                        className="px-8 py-4 bg-linear-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full hover:shadow-lg hover:shadow-orange-500/25 hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                    >
+                        Télécharger mon CV
+                        <Download size={20} />
                     </a>
-                </div>
-            </div>
+
+                    <a
+                        href="https://github.com/MoussaouiWassime"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-8 py-4 glass-panel text-white rounded-full flex items-center gap-2 hover:bg-white/10 hover:scale-105 transition-all duration-300"
+                    >
+                        <Github size={20} />
+                        GitHub
+                    </a>
+                </motion.div>
+            </motion.div>
         </section>
     );
 };
+
 export default Hero;
