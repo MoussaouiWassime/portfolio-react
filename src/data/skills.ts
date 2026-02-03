@@ -41,7 +41,8 @@ export const skillsData: SkillCategory[] = [
             { name: "Figma", icon: "devicon-figma-plain" },
             { name: "Canva", icon: "devicon-canva-original" },
             { name: "JetBrains", icon: "devicon-jetbrains-plain" },
-            { name: "VS Code", icon: "devicon-vscode-plain" }
+            { name: "VS Code", icon: "devicon-vscode-plain" },
+            { name : "Trello", icon : "devicon-trello-plain" }
         ]
     }
 ];
